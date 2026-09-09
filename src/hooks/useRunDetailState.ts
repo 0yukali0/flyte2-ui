@@ -17,8 +17,6 @@ import { useQueryState } from 'nuqs'
 import { useEffect } from 'react'
 import { useConnectRpcClient } from './useConnectRpc'
 
-const FINAL_FETCH_PAGE_LIMIT = 1000
-
 const getFilters = (
   filterString: string | null,
   searchTerm: string | null,
@@ -92,7 +90,6 @@ export const useRunDetailState = ({
               project: projectId,
             },
             request: {
-              limit: FINAL_FETCH_PAGE_LIMIT,
               token,
               filters: getFilters(statusValue, searchTerm),
             },
